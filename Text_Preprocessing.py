@@ -37,8 +37,19 @@ def stem_words(tokens):
     ps = PorterStemmer()
     return [ps.stem(word) for word in tokens]
 
+# Step 6: Lemmatization (using WordNet Lemmatizer)
+def lemmatize_words(tokens):
+    lemmatizer = WordNetLemmatizer()
+    return [lemmatizer.lemmatize(word) for word in tokens]
+
+# Step 7: Handling Special Characters (removing numbers, hashtags, etc.)
+def remove_special_characters(text):
+    return re.sub(r'[^a-zA-Z\s]', '', text)
+
 print("Step 1:" , lower_case(sample_text))
 print("Step 2:", remove_punctuation(sample_text))
 #print("Step 3:", tokenize(sample_text))
 print("Step 4:", remove_stopwords(sample_text))
 print("Step 5:", stem_words(sample_text))
+print("Step 6:", lemmatize_words(sample_text))
+print("Step 7:", remove_special_characters(sample_text))
