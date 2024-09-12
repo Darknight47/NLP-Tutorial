@@ -27,6 +27,18 @@ def remove_punctuation(text):
 def tokenize(text):
     return word_tokenize(text)
 
+# Step 4: Removing Stopwords
+def remove_stopwords(tokens):
+    stop_words = set(stopwords.words('english'))
+    return [word for word in tokens if word not in stop_words]
+
+# Step 5: Stemming (using Porter Stemmer)
+def stem_words(tokens):
+    ps = PorterStemmer()
+    return [ps.stem(word) for word in tokens]
+
 print("Step 1:" , lower_case(sample_text))
 print("Step 2:", remove_punctuation(sample_text))
 #print("Step 3:", tokenize(sample_text))
+print("Step 4:", remove_stopwords(sample_text))
+print("Step 5:", stem_words(sample_text))
