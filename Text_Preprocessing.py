@@ -19,4 +19,9 @@ sample_text = """Arsenal FC had an incredible performance in the Premier League 
 def lower_case(text):
     return text.lower()
 
-print(lower_case(sample_text))
+# Step 2: Removing Punctuation
+def remove_punctuation(text):
+    return text.translate(str.maketrans('', '', string.punctuation))
+
+print("Step 1:" , lower_case(sample_text))
+print("Step 2: ", remove_punctuation(sample_text))
