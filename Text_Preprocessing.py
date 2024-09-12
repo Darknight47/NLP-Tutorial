@@ -7,9 +7,9 @@ import re
 import string
 
 # Download required NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+#nltk.download('punkt')
+#nltk.download('stopwords')
+#nltk.download('wordnet')
 
 # Sample text (feel free to replace this with Arsenal FC related text)
 sample_text = """Arsenal FC had an incredible performance in the Premier League last night. 
@@ -23,5 +23,10 @@ def lower_case(text):
 def remove_punctuation(text):
     return text.translate(str.maketrans('', '', string.punctuation))
 
+# Step 3: Tokenization
+def tokenize(text):
+    return word_tokenize(text)
+
 print("Step 1:" , lower_case(sample_text))
-print("Step 2: ", remove_punctuation(sample_text))
+print("Step 2:", remove_punctuation(sample_text))
+#print("Step 3:", tokenize(sample_text))
